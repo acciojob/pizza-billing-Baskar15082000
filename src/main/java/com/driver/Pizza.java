@@ -6,8 +6,8 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
-    private boolean extrachesse;
-    private boolean extratoppings;
+    public boolean extrachesse;
+    public boolean extratoppings;
     private boolean takeaway;
     int total=0;
 
@@ -24,6 +24,9 @@ public class Pizza {
             total+=400;
 
         }
+        this.extrachesse=false;
+        this.extratoppings=false;
+        this.takeaway=false;
 
 
         // your code goes here
