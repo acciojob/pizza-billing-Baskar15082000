@@ -37,21 +37,15 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        if(!extrachesse){
+        if(!extrachesse && !extratoppings){
             this.extrachesse=true;
             total+=80;
         }
-
-
-
-
-
-
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(!extratoppings){
+        if(!extratoppings && extrachesse ){
             this.extratoppings=true;
             if(isVeg)total+=70;
             else{
@@ -64,9 +58,10 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-
-        this.takeaway=true;
-        total+=20;
+        if(!takeaway) {
+            this.takeaway = true;
+            total += 20;
+        }
 
 
     }
