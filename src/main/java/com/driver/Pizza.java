@@ -9,6 +9,10 @@ public class Pizza {
     public boolean extrachesse;
     public boolean extratoppings;
     private boolean takeaway;
+
+    int top;
+    int che;
+    int bag;
     int total=0;
 
 
@@ -16,20 +20,19 @@ public class Pizza {
         this.isVeg = isVeg;
         if(isVeg){
             this.price=300;
-            total+=300;
+            this.top=70;
 
         }
         else{
             this.price=400;
-            total+=400;
+            this.top=120;
 
         }
         this.extrachesse=false;
         this.extratoppings=false;
         this.takeaway=false;
-
-
-
+        this.che=80;
+        this.bag=20;
         // your code goes here
     }
 
@@ -42,7 +45,7 @@ public class Pizza {
         // your code goes here
         if(!extrachesse ){
             this.extrachesse=true;
-            total+=80;
+            total+=che;
         }
     }
 
@@ -50,10 +53,7 @@ public class Pizza {
         // your code goes here
         if(!extratoppings ){
             this.extratoppings=true;
-            if(isVeg)total+=70;
-            else{
-                total+=120;
-            }
+            this.total+=top;
         }
 
 
@@ -63,7 +63,7 @@ public class Pizza {
         // your code goes here
         if(!takeaway) {
             this.takeaway = true;
-            total += 20;
+            this.total+=bag;
         }
 
 
@@ -71,22 +71,20 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-
+        total+=price;
         String str="Base Price Of The Pizza: "+price;
         if(extrachesse){
-            str=str+"\nExtra Cheese Added: "+80;
+            str=str+"\nExtra Cheese Added: "+che;
 
         }
         if(extratoppings){
-            if(isVeg) {
-                str = str + "\nExtra Toppings Added: " + 70;
-            }
-            else {
-                str=str + "\nExtra Toppings Added: " + 120;
-            }
+
+                str = str + "\nExtra Toppings Added: " + top;
+
+
 
         }
-        if(takeaway){str=str+"\nPaperbag Added: "+20;
+        if(takeaway){str=str+"\nPaperbag Added: "+bag;
 
         }
         str=str+"\nTotal Price: "+total;
