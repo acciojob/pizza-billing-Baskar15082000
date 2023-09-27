@@ -5,8 +5,7 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    private int count=0;
-    private int count2=0;
+
     private boolean extrachesse;
     private boolean extratoppings;
     private boolean takeaway;
@@ -37,7 +36,7 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        if(!extrachesse && !extratoppings){
+        if(!extrachesse ){
             this.extrachesse=true;
             total+=80;
         }
@@ -45,7 +44,7 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        if(!extratoppings && extrachesse ){
+        if(!extratoppings ){
             this.extratoppings=true;
             if(isVeg)total+=70;
             else{
