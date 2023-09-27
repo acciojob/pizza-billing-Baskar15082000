@@ -74,7 +74,12 @@ public class Pizza {
 
         }
         if(extratoppings){
-            str=str+"\nExtra Toppings Added: "+70;
+            if(isVeg) {
+                str = str + "\nExtra Toppings Added: " + 70;
+            }
+            else {
+                str=str + "\nExtra Toppings Added: " + 120;
+            }
 
         }
         if(takeaway){str=str+"\nPaperbag Added: "+20;
